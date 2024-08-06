@@ -18,7 +18,7 @@ void prompt(void) {
 }
 
 void handle_background_processes() {
-    int wpid;
+    int wpid;        // value returned by wait
     while ((wpid = waitpid(-1, NULL, WNOHANG)) > 0) {
         printf("Background process %d done\n", wpid);
     }
@@ -29,7 +29,6 @@ void handle_background_processes() {
 
 int main(int argk, char *argv[], char *envp[]) {
     int frkRtnVal;   // value returned by fork sys call
-    int wpid;        // value returned by wait
     char *v[NV];     // array of pointers to command line tokens
     char *sep = " \t\n"; // command line token separators
     int i;           // parse index
