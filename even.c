@@ -17,14 +17,14 @@ int main(int argc, char *argv[]) {
 
     // Check if the correct number of arguments is provided
     if (argc != 2) {
-        printf(stderr, "Please provide correct number of arguments.\n");
+        fprintf(stderr, "Please provide correct number of arguments.\n");
         return 1;
     }
 
     // Convert the input argument to an integer
     int n = atoi(argv[1]);
     if (n <= 0) {
-        printf(stderr, "Please provide a positive number.\n");
+        fprintf(stderr, "Please provide a positive number.\n");
         return 1;
     }
 
